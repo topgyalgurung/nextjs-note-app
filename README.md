@@ -1,3 +1,13 @@
+## Next.js Note app with Pocketbase database 
+
+
+### Pocketbase setup - open source backend in 1 file 
+- just install executable
+- and move .exe file to root of app
+- Run $ ./pocketbase serve to start the app
+- will ask to set up superuser account
+- but for development you can 
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

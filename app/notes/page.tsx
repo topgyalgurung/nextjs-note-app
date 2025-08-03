@@ -1,6 +1,7 @@
 import PocketBase from 'pocketbase';
 import Link from "next/link";
 import styles from './Notes.module.css'
+import CreateNote from './CreateNote';
 
 // for caching now with pocketbase sdk, if not using fetch
 export const dynamic = 'auto',
@@ -32,20 +33,21 @@ export default async function NotesPage(){
             <div>
                 {notes?.map((note) => {
                 return <Note key={note.id} note={note}/>;
-            })}
-                 </div>
+                })}
+            </div>
+            <CreateNote/>
 
         </div>
     )
 }
 // i know any ain't good type lol
 function Note({note}:any){
-    const {id, Title, Content, created} = note || {};
+    const {id, title, content, created} = note || {};
     return(
          <Link href={`/notes/${id}`}>
         <div className={styles.note}>
-            <h2>{Title} </h2>
-            <h5>{Content} </h5>
+            <h2>{title} </h2>
+            <h5>{content} </h5>
             <p> {created}</p>
         </div>
     </Link>
